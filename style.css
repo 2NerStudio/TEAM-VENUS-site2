@@ -1,0 +1,193 @@
+/* Import de fontes para torná-lo mais bonito */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700&display=swap');
+
+/* Reset básico para minimalismo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Fonte principal */
+    background-color: #121212; /* Fundo preto escuro para tema dark */
+    color: #e0e0e0; /* Texto claro para contraste */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header com gradiente roxo/preto para beleza */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo para preto */
+    padding: 15px 30px; /* Mais espaçamento para elegância */
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra suave para profundidade */
+}
+
+/* Ajustes para elementos do header */
+.header-left, .header-right {
+    flex: 1;
+}
+
+.header-center {
+    flex: 2;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista/gaming */
+    font-size: 2.5em; /* Maior para impacto */
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra no texto para beleza */
+}
+
+/* Ícone de Discord à esquerda com glow */
+.discord-icon {
+    width: 60px; /* Ligeiramente maior */
+    height: auto;
+    filter: drop-shadow(0 0 5px #ab47bc); /* Glow roxo sutil */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.discord-icon:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+/* Foto circular à direita com borda glow */
+.foto-circular {
+    width: 90px; /* Ligeiramente maior para destaque */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ab47bc; /* Borda roxa */
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
+    transition: box-shadow 0.3s ease;
+}
+
+.foto-circular:hover {
+    box-shadow: 0 0 15px rgba(171, 71, 188, 0.8); /* Glow mais forte no hover */
+}
+
+/* Menu de navegação (abas) */
+.menu {
+    background: #1e1e1e; /* Fundo cinza escuro */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Responsivo para mobile */
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: #ab47bc; /* Roxo claro */
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #e1bee7; /* Roxo mais claro no hover */
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Seções (abas) */
+section {
+    margin-bottom: 50px;
+    padding: 25px;
+    background-color: #1e1e1e; /* Fundo cinza escuro */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #ab47bc; /* Roxo claro para títulos */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.section-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.05); /* Zoom no hover */
+}
+
+/* Footer com gradiente */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #6a1b9a, #121212);
+    color: white;
+    margin-top: 30px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ab47bc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #e1bee7;
+}
+
+/* Media query para responsividade (mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .header-center {
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
