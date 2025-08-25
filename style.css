@@ -135,14 +135,27 @@ h2 {
     width: 45%;
     height: auto;
     border-radius: 8px;
-    margin-top: 15px;
+    margin: 20px auto 0 auto; /* centraliza horizontalmente */
     box-shadow: 0 0 10px rgba(171, 71, 188, 0.5); /* Glow roxo */
     transition: transform 0.3s ease;
-    margin: 20px auto 0 auto;
+    display: block; /* necessário para centralizar */
 }
+
 
 .section-image:hover {
     transform: scale(1.05); /* Zoom no hover */
+}
+
+.preguica {
+    text-align: center;
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    font-size: 1em;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.preguica:hover {
+    color: #e1bee7; /* Roxo claro no hover para interatividade */
 }
 
 /* Footer com gradiente */
