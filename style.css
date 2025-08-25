@@ -366,71 +366,54 @@ h2:hover {
     text-shadow: 0 0 5px rgba(171, 71, 188, 0.3); /* Glow sutil */
 }
 
-/* Footer com gradiente - Expandido com pseudo e animações */
+/* Footer com gradiente - Simplificado para corrigir bug de clicabilidade (removidas animações e pseudo-elementos) */
 footer {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/black */
+    background: linear-gradient(135deg, #6a1b9a, #121212); /* Gradiente roxo/black mantido */
     color: white;
     margin-top: 30px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5), 0 -2px 5px rgba(171, 71, 188, 0.2); /* Sombra superior com glow */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5); /* Sombra básica mantida */
+    font-size: 0.9em;
     position: relative;
-    transition: padding 0.3s ease, box-shadow 0.3s ease;
-    animation: footerPulse 4s infinite alternate ease-in-out; /* Pulse sutil */
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(171, 71, 188, 0.1), transparent); /* Overlay radial roxo */
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-}
-
-footer:hover::before {
-    opacity: 0.8; /* Aumenta no hover */
-}
-
-footer:hover {
-    padding: 20px; /* Expande no hover */
-    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.6), 0 -3px 10px rgba(171, 71, 188, 0.3); /* Glow mais forte */
+    z-index: 1; /* Z-index baixo para não sobrepor conteúdo */
+    pointer-events: auto; /* Garante interatividade no footer inteiro */
+    transition: none; /* Remove transições para evitar delays em cliques */
 }
 
 footer p {
-    font-size: 0.9em;
     letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-footer p:hover {
-    color: #e1bee7; /* Roxo claro no hover */
+    pointer-events: auto; /* Garante interatividade no parágrafo */
+    transition: none; /* Sem transições para cliques imediatos */
 }
 
 footer a {
     color: #ab47bc;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    cursor: pointer; /* Indica explicitamente que é clicável */
+    pointer-events: auto; /* Força clicabilidade no link */
+    position: relative;
+    z-index: 2; /* Acima de qualquer elemento no footer */
+    display: inline-block;
+    padding: 5px 10px; /* Padding para área de clique maior */
+    border-radius: 4px; /* Bordas suaves */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transições apenas em cor e fundo para feedback visual */
 }
 
 footer a:hover {
     color: #e1bee7;
-    text-decoration: underline; /* Underline no hover */
+    background-color: rgba(171, 71, 188, 0.2); /* Fundo roxo sutil no hover para destaque, mantendo gradiente base */
+    text-decoration: underline; /* Underline para feedback */
+}
+
+footer a:active {
+    transform: scale(0.98); /* Efeito de "pressione" ao clicar */
 }
 
 footer a:focus {
     outline: none;
     box-shadow: 0 0 5px #ab47bc; /* Foco roxo para acessibilidade */
-}
-
-/* Animação de pulse para footer */
-@keyframes footerPulse {
-    0% { box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5), 0 -2px 5px rgba(171, 71, 188, 0.2); }
-    100% { box-shadow: 0 -5px 12px rgba(0, 0, 0, 0.55), 0 -3px 7px rgba(171, 71, 188, 0.25); }
 }
 
 /* Media query para responsividade (mobile <768px) - Expandida com ajustes finos */
@@ -500,6 +483,10 @@ footer a:focus {
     footer {
         padding: 10px; /* Reduz em mobile */
         font-size: 0.8em; /* Menor texto */
+    }
+
+    footer a {
+        padding: 8px 12px; /* Área de clique maior em mobile para dedos */
     }
 }
 
